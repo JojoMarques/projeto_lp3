@@ -1,9 +1,9 @@
-from flask import Flask
+from flask import Flask, render_template
 from validate_docbr import CPF, CNPJ #importação
 
 # Aluno aluno = new Aluno ()
 # aluno = new Aluno () --> mas não precisa do new
-# aluno = Aluno ()
+# aluno = Aluno ()>
 
 # instancia um objeto flask que representa a aplicação
 app = Flask("minha aplicação") # nome da aplicação passado no construtor
@@ -15,19 +15,24 @@ app = Flask("minha aplicação") # nome da aplicação passado no construtor
 # página home -/
 @app.route("/")
 def home ():
-    return "<h1>Home page</h1>"
+    return render_template("home.html")
 # "app" (Flask), td vez q vc tiver uma rota, e essa rota for /, execute essa função em seguida (a home)
 
 # página contato - /contato
 @app.route("/contato")
 def contato():
-    return "<h1>Contato</h1>"
+    return render_template("contato.html")
 # "app" (Flask), td vez q vc tiver uma rota, e essa rota for /contato, execute essa função em seguida (a contato)
 
 # página produtos - /produtos
 @app.route("/produtos")
 def produtos():
-    return "<h1>Produtos</h1>"
+   lista_produtos = [
+       {"nome":"Coca-cola", "descricao":"Mata a sede"},
+       {"nome":"Doritos", "descricao":"Suja a mão"},
+       {"nome":"Chocolate","descricao":"Bom demais"}
+   ]
+   return render_template("produtos.html", produtos = lista_produtos)
 # "app" (Flask), td vez q vc tiver uma rota, e essa rota for /produtos, execute essa função em seguida (a produtos)
 # as funções tem que ser executadas quando forem requisitadas 
 
