@@ -44,19 +44,36 @@ def produtos():
 def gerar_cpf():
     cpf = CPF ()
     cpf_gerado = cpf.generate(True)
-    return f"<h1> CPF gerado: {cpf_gerado} </h1>"
+    return render_template("cpf.html", cpf = cpf_gerado)
+    #return f"<h1> CPF gerado: {cpf_gerado} </h1>"
 
 # página - /gerar-cnpj (deve devolver um cnpj aleatório)
 @app.route("/gerar-cnpj")
 def gerar_cnpj():
     cnpj = CNPJ()
     cnpj_gerado = cnpj.generate(True)
-    return f"<h1> CNPJ gerado: {cnpj_gerado} </h1>"
+    return render_template("cnpj.html", cnpj = cnpj_gerado)
+    #return f"<h1> CNPJ gerado: {cnpj_gerado} </h1>"
 
 # página - /servicos (deve devolver um título com "Nossos serviços")
 @app.route("/servicos")
 def servicos():
     return "<h1>Nossos serviços</h1>"
+
+#                                               EXERCÍCIO - REPOSIÇÃO (20/06)
+
+@app.route("/termos-de-uso")
+def termos_de_uso():
+    return render_template("termos-de-uso.html")
+
+
+@app.route("/politica-privacidade")
+def politica_privacidade():
+    return render_template("politica-privacidade.html")
+
+@app.route("/como-utilizar")
+def como_utilizar():
+    return render_template("como-utilizar.html")
 
 # roda direto por aqui
 app.run()
