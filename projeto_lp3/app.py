@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 from validate_docbr import CPF, CNPJ #importação
 
 # Aluno aluno = new Aluno ()
@@ -24,14 +24,14 @@ def contato():
     return render_template("contato.html")
 # "app" (Flask), td vez q vc tiver uma rota, e essa rota for /contato, execute essa função em seguida (a contato)
 
-# página produtos - /produtos
-@app.route("/produtos")
-def produtos():
-   lista_produtos = [
+lista_produtos = [
        {"nome":"Coca-cola", "descricao":"Mata a sede"},
        {"nome":"Doritos", "descricao":"Suja a mão"},
        {"nome":"Chocolate","descricao":"Bom demais"}
    ]
+# página produtos - /produtos
+@app.route("/produtos")
+def produtos():
    return render_template("produtos.html", produtos = lista_produtos)
 # "app" (Flask), td vez q vc tiver uma rota, e essa rota for /produtos, execute essa função em seguida (a produtos)
 # as funções tem que ser executadas quando forem requisitadas 
@@ -75,5 +75,21 @@ def politica_privacidade():
 def como_utilizar():
     return render_template("como-utilizar.html")
 
+#                                                           AULA - 25/06
+# método GET para obter o formulário (por padrão)
+@app.route("/produtos/cadastro")
+def cadastro_produtos():
+    return render_template("cadastro_produto.html")
+
+#POST para receber os dados do form
+#objeto request organiza os dados do formulário em um dicionário chamado form
+@app.route("/produtos", methods=['POST'])
+def salvar_produtos():
+    nome = request.form['nome']
+    descricao = request.form['descricao']
+    produto = { "nome": nome, "descricao": descricao}
+    lista_produtos.append(produto)
+    return render_template("produtos.html", produtos = lista_produtos)
+    
 # roda direto por aqui
 app.run()

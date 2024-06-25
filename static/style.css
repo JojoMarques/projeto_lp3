@@ -1,0 +1,26 @@
+h1{
+    border: 1px solid;
+    margin-top: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    color: rgb(11, 75, 112);
+    text-align: center;
+    border-radius: 10px;
+    width: 20%;
+    height: 40%;
+}
+label, input, button{
+    display: block;
+}
+body{
+    background-color: rgb(149, 182, 255);
+}
+div{
+    display: flex;
+    justify-content: center;
+}
+.forms{
+    display: flex;
+    justify-content: center;
+    color: rgb(4, 71, 109);
+}
