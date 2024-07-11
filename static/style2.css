@@ -1,1 +1,72 @@
 /**montar op CSS das páginas principais*/
+body{
+    background-color: #ecbcff;
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+}
+footer{
+    color: black;
+    text-align: center;
+    font-size: larger;
+}
+nav{
+    display: flex;
+    justify-content: center;/*centralizou*/ 
+    gap: 25px; /**distância**/
+    display: flex;
+}
+a{
+    font-size: large;
+}
+hr{
+    margin-top: 100px;
+    border-color: #b062cf;
+    width: 100%;
+}
+.link-superior{
+    padding: 20px;
+    color: #b062cf;
+    font-size: large;
+}
+.link-inferior{
+    margin-top: 60px;
+    color: #b062cf;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+}
+.link-superior:hover, .link-inferior:hover{
+    color: #711f92;
+    font-size: large;
+}
+.container-links-inferiores{
+    position: fixed;
+    bottom: 100px;
+    left: 0;
+    right: 0;
+    text-align: center;
+}
+.content-box {
+    width: 90%;;
+    height: 200px;
+    background-color: #c783e2;
+    border: solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    text-align: center;
+}
+.container-content{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.fixar{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}

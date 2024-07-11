@@ -13,25 +13,33 @@
 
 <body link="blue">
     <nav>
-        <a href="/">Home Page</a>
-        <a href="/contato">Contato</a>
-        <a href="/produtos">Produto</a>
+        <a href="/" class="link-superior">Home Page</a>
+        <a href="/contato" class="link-superior">Contato</a>
+        <a href="/produtos" class="link-superior">Produto</a>
+        <!--<a href="/produtos/cadastro">cadastro produtos</a>-->
     </nav>
-
-    <a href="/gerar-cpf" class="botoes">Gerar CPF</a>
-    <a href="/gerar-cnpj">Gerar CNPJ</a>
-
+    <!-- <a href="/gerar-cpf" class="botoes">Gerar CPF</a>
+    <a href="/gerar-cnpj">Gerar CNPJ</a>-->
+   
 
     {% block content %}
     {% endblock %}
 
-    <footer>
-        <p>Desenvolvido por Jojo</p>
-    </footer>
+    <div class="fixar">
+        <hr>
+        <footer >
+            <p>Desenvolvido por Jojo</p>
+        </footer>
+    </div>
 
-    <a href="/termos-de-uso">Termos de uso</a>
-    <a href="/politica-privacidade">Política privacidade</a>
-    <a href="/como-utilizar">Como utilizazr</a>
+    <div class="container-links-inferiores">
+        <nav>
+            <a href="/termos-de-uso" class="link-inferior">Termos de uso</a>
+            <a href="/politica-privacidade" class="link-inferior">Política privacidade</a>
+            <a href="/como-utilizar" class="link-inferior">Como utilizar</a>
+        </nav>
+    </div>
+    
 
 </body>
 
