@@ -3,14 +3,15 @@
 {% block title %}Produtos{% endblock %}
 
 {% block content %}
-<div class="classe1">
+
+<a href="/produtos/cadastro" class="classe1">Cadastrar produtos</a>
+
+<div>
     <h1>Produtos</h1>
 </div>
 
-<a href="/produtos/cadastro" class="classe1">cadastrar produtos</a>
-
 {%- if produtos %}
-<p>Confira nossos produtos abaixo</p>
+<p>Confira nossos produtos abaixo:</p>
 
 <ul>
     {%- for produto in produtos %}
